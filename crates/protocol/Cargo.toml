@@ -1,0 +1,11 @@
+[package]
+name = "sync-wire"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+description = "The entire trust boundary between the unprivileged agent and the privileged helper. Fixed-size, string-free, bounds-checked."
+
+[dependencies]
+# Deliberately empty. This crate is the attack surface; it must stay auditable.

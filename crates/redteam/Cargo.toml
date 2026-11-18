@@ -1,0 +1,16 @@
+[package]
+name = "syncd-redteam"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+description = "Attack harness and integration tests proving the split's blast radius is bounded."
+
+[[bin]]
+name = "redteam"
+path = "src/main.rs"
+
+[dependencies]
+sync-wire = { path = "../protocol" }
+sync-core = { path = "../sync-core" }

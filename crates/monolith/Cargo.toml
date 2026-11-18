@@ -1,0 +1,16 @@
+[package]
+name = "sync-monolith"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+description = "The simplified monolith: one process, everything privileged. The 'before' side of the comparison."
+
+[[bin]]
+name = "syncd-monolith"
+path = "src/main.rs"
+
+[dependencies]
+sync-core = { path = "../sync-core" }
+sync-wire = { path = "../protocol" }

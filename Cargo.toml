@@ -1,0 +1,30 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/protocol",
+    "crates/sync-core",
+    "crates/helper",
+    "crates/agent",
+    "crates/monolith",
+    "crates/redteam",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.75"
+license = "MIT OR Apache-2.0"
+publish = false
+
+# Security posture: the privileged helper and the wire protocol have ZERO
+# third-party dependencies. Nothing to audit but std and the OS frameworks.
+# The unprivileged side is also dependency-free on purpose, so the whole
+# workspace can be audited with `cargo tree` and the answer is "no deps".
+[workspace.dependencies]
+
+[profile.release]
+panic = "abort"
+overflow-checks = true
+lto = "thin"
+codegen-units = 1
+strip = "symbols"

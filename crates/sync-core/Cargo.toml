@@ -1,0 +1,11 @@
+[package]
+name = "sync-core"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+description = "Unprivileged network and file parsing: the code an attacker is expected to reach. Used by the agent and by the monolith."
+
+[dependencies]
+sync-wire = { path = "../protocol" }

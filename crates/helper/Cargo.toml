@@ -1,0 +1,16 @@
+[package]
+name = "syncd-helper"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+description = "The small, privileged helper. Speaks one fixed-size frame, re-verifies the caller's code signature on every request, performs four operations."
+
+[[bin]]
+name = "syncd-helper"
+path = "src/main.rs"
+
+[dependencies]
+sync-wire = { path = "../protocol" }
+sync-core = { path = "../sync-core" }

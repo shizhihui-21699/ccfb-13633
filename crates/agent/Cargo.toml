@@ -1,0 +1,16 @@
+[package]
+name = "syncd-agent"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+description = "The unprivileged main process. Parses network traffic, handles files, and may only ask the helper for four operations."
+
+[[bin]]
+name = "syncd-agent"
+path = "src/main.rs"
+
+[dependencies]
+sync-wire = { path = "../protocol" }
+sync-core = { path = "../sync-core" }
